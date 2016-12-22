@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">RealmApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="small_description">It is made from dairy combined with fruits or other ingredients and flavours.</string>
+    <string name="action_settings">Settings</string>
+    <string name="addtocart">Add to Cart</string>
+    <string name="item_description">It is usually made from dairy products, such as milk and cream, and often combined
+        with fruits or other ingredients and flavours. It is typically sweetened with sugar or sugar substitutes. Typically,
+        flavourings and colourings are added in addition to stabilizers. The mixture is stirred to incorporate air spaces and
+        cooled below the freezing point of water to prevent detectable ice crystals from forming. The result is a smooth,
+        semisolid foam that is solid at very low temperatures. It becomes more malleable as its temperature
+        increases.
+        The meaning of the phrase ice cream varies from one country to another. In some countries, such as the United
+        States,applies only to a specific variety, and most governments regulate the commercial use of the various terms according to the relative
+        quantities of the main ingredients, notably the amount of cream.Products that do not meet the criteria to be called ice cream
+        are labelled instead. In other countries, such as Italy and Argentina, one word is used for all variants. Analogues made from dairy alternatives,
+        such as goats or sheeps milk, or milk substitutes e.g., soy milk or tofu, are available for those who are lactose intolerant, allergic to dairy protein, or vegan.
+        Ice cream may be served in dishes, for eating with a spoon, or in cones, which are licked. Ice cream may be served with other desserts, such as apple pie.</string>
+
+</resources>
