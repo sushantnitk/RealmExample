@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.example.realmapp.API.ApiClient;
 import android.example.realmapp.API.MshopApi;
 import android.example.realmapp.R;
+import android.example.realmapp.Realm.Favourites;
 import android.example.realmapp.Realm.Products;
 import android.example.realmapp.Utils.RealmManager;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -154,7 +156,15 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.FavCart) {
-
+            RealmResults<Favourites> result = realm.where(Favourites.class).findAll();
+            if(result.size()!=0){
+                Intent intent = new Intent(this,CartItems.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this,"Item Cart is Empty!Please shop first",Toast.LENGTH_LONG).show();
+                Intent intent1 = new Intent(this,EmptyCart.class);
+                startActivity(intent1);
+            }
 
         } else if (id == R.id.nav_slideshow) {
 

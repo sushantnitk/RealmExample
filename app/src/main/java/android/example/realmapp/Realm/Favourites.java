@@ -101,4 +101,6 @@ public class Favourites extends RealmObject {
     public void setCount(int count) {
         this.count = count;
     }
+
+
 }
