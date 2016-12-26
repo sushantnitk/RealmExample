@@ -1,13 +1,13 @@
 package android.example.realmapp.Adapters;
 
 import android.content.Context;
+import android.example.realmapp.R;
+import android.example.realmapp.UI.CartItems;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import ecom.com.mshop.R;
-import ecom.com.mshop.UI.CartItems;
 
 /**
  * Created by Pandey on 25-11-2016.
@@ -83,6 +83,7 @@ public class CartListViewHolder extends RecyclerView.ViewHolder implements View.
     public void onClick(View v) {
         if(v.getId()== R.id.deleteItem){
             ((CartItems)context).onOptionSelected(v.getId(),getAdapterPosition());
+
         }
     }
 }

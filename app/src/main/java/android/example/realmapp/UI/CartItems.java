@@ -43,24 +43,6 @@ public class CartItems extends AppCompatActivity implements CartlistAdapter.OnSh
         recyclerView = (RecyclerView) findViewById(R.id.itemListView);
         coupon=nextSessionId();
         if(!itemsCart.isEmpty()){
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    int size =itemsCart.size()-1;
-                    int cart_count=itemsCart.size();
-                    float cost=0;
-                    float sum =0;
-                    while(size>=0){
-                       Favourites items = itemsCart.get(size);
-                        cost = items.getItemQuantity() * items.getItemPrice();
-                        sum = sum + cost;
-                        size--;
-                    }
-                    CartCheckOut cartCheckOut = new CartCheckOut(cart_count,sum);
-                    itemsCart.add(cartCheckOut);
-                }
-            });
-
             final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
             layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             recyclerView.setLayoutManager(layoutManager);
@@ -105,23 +87,6 @@ public class CartItems extends AppCompatActivity implements CartlistAdapter.OnSh
         public void onChange(Object element) {
             itemsCart = realm.where(Favourites.class).findAll();
             if (!itemsCart.isEmpty()) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        int size = itemsCart.size() - 1;
-                        int cart_count = itemsCart.size();
-                        float cost = 0;
-                        float sum = 0;
-                        while (size >= 0) {
-                            Favourites items = itemsCart.get(size);
-                            cost = items.getItemQuantity() * items.getItemPrice();
-                            sum = sum + cost;
-                            size--;
-                        }
-                        CartCheckOut cartCheckOut = new CartCheckOut(cart_count, sum);
-                        itemsCart.add(cartCheckOut);
-                    }
-                });
                 cartlistAdapter = new CartlistAdapter(CartItems.this, itemsCart, coupon);
                 RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(CartItems.this, 1);
                 recyclerView.setLayoutManager(mLayoutManager);
@@ -147,7 +112,7 @@ public class CartItems extends AppCompatActivity implements CartlistAdapter.OnSh
             return new BigInteger(130, random).toString(32).substring(0,16);
         }
 
-    public class CartCheckOut extends Favourites {
+    public class CartCheckOut {
         private int count;
         private float totalBill;
 
